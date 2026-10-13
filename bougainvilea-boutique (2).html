@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bougainvilea Boutique — Kurta Sets, Salwar Sets &amp; Unstitched Silks</title>
+<meta name="description" content="Aesthetic collection for every occasion — kurta sets, salwar sets, unstitched silks and home linens from Bougainvilea Boutique, dispatched across India and worldwide.">
+<meta name="theme-color" content="#5B1A33">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%235B1A33'%3E%3Cpath d='M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z'/%3E%3Cpath transform='rotate(120 50 50)' d='M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z'/%3E%3Cpath transform='rotate(240 50 50)' d='M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&amp;family=Jost:wght@400;500;600&amp;family=Pinyon+Script&amp;display=swap">
+<!--
+  Bougainvilea Boutique — homepage + product page (design prototype)
+  • One file, no build step: open it in any browser, or drop it on any static host.
+  • Product photos: every .ph block is a photo slot. Put <img src="…" alt="…"> inside it and the photo fills the frame.
+  • Product data (names, prices, collections) lives in CATALOG in the script at the bottom.
+  • Fonts: Bodoni Moda (headings), Jost (text), Pinyon Script (signature) from Google Fonts.
+-->
+<style>
+:root{
+  --ivory:#F6F0E6; --sand:#EFE5D6; --paper:#FFFDF9;
+  --ink:#2B1A1E; --muted:#6A5552;
+  --gold-text:#7D5F2E; --gold-line:#B8975E; --gold-frame:#C9AE7C; --gold-light:#E2C48E; --gold-script:#E7CFA0;
+  --hair:#E3D6C3; --hair-strong:#D5C5AE;
+  --wine:#5B1A33; --wine-dark:#47132A;
+  --green:#234A3A; --green-dark:#18362A;
+  --night:#261117; --night-line:#4A2A33; --night-text:#F1E4DE; --night-muted:#CDB8BD;
+  --serif:'Bodoni Moda','Bodoni 72',Didot,Georgia,serif;
+  --sans:'Jost','Futura','Century Gothic','Avenir Next','Segoe UI',sans-serif;
+  --script:'Pinyon Script','Snell Roundhand','Apple Chancery',cursive;
+  --wrap:1280px; --gutter:clamp(16px,4vw,48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3,p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+svg{display:block}
+a{color:inherit;text-decoration-thickness:1px}
+a:hover{color:var(--wine)}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--gold-light)}
+[tabindex="-1"]:focus{outline:none}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-80px;z-index:100;padding:12px 18px;background:var(--ink);color:var(--ivory);text-decoration:none;font-size:14px}
+.skip:focus{top:12px;color:var(--ivory)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gutter)}
+.icon{width:21px;height:21px;flex:none;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+
+/* Buttons & type */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 40px;border:1px solid transparent;border-radius:0;background:transparent;font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;text-align:center;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+.btn-wine{background:var(--wine);color:var(--ivory)}
+.btn-wine:hover{background:var(--wine-dark);color:var(--ivory)}
+.btn-outline{border-color:var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--ivory)}
+.btn-gold{border-color:var(--gold-script);color:var(--ivory)}
+.btn-gold:hover{background:rgba(231,207,160,.14);color:var(--ivory)}
+.btn-green{background:var(--green);color:var(--ivory)}
+.btn-green:hover{background:var(--green-dark);color:var(--ivory)}
+.btn-line-green{width:100%;min-height:52px;border-color:var(--green);color:var(--green);font-size:12.5px;letter-spacing:.18em}
+.btn-line-green:hover{background:var(--green);color:var(--ivory)}
+.link-caps{display:inline-flex;align-items:center;min-height:44px;font-size:12.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);text-underline-offset:7px}
+.link-btn{min-height:44px;padding:0;border:0;background:transparent;color:var(--ink);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:underline;text-underline-offset:5px}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold-text);font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase}
+.eyebrow span{padding-left:.32em}
+.eyebrow.left{justify-content:flex-start}
+.eyebrow.left span{padding-left:0}
+.orn{width:60px;height:8px;flex:none;color:var(--gold-line)}
+.orn.short{width:40px}
+.kicker{color:var(--gold-text);font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.2vw,60px);line-height:1.05;text-wrap:balance}
+.h2 em{font-style:italic}
+.section{padding-block:100px}
+.section-head{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.body-muted{font-size:17px;line-height:1.75;color:var(--muted);text-wrap:pretty}
+
+/* Photo slots (drop an <img> inside any .ph to use a real photo) */
+.ph{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background-color:var(--tone,#6E1A3C);background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 1px,transparent 1px 8px);color:rgba(255,255,255,.62)}
+.ph::after{content:"";position:absolute;inset:10px;z-index:1;border:1px solid rgba(255,255,255,.5);border-radius:inherit;pointer-events:none}
+.ph.light{color:rgba(43,26,30,.34)}
+.ph.light::after{border-color:rgba(43,26,30,.2)}
+.ph.arch{border-radius:999px 999px 0 0}
+.ph > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sil{width:46%;height:auto;fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+.sil-wide{width:58%}
+.arch-frame{width:100%;padding:8px;border:1px solid var(--gold-frame);border-radius:999px 999px 0 0}
+
+/* Top bar & header */
+.topbar{background:var(--wine);color:var(--ivory);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.topbar-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 40px;padding-block:10px;text-align:center}
+.site-header{background:var(--ivory)}
+.header-main{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;padding-block:22px 18px}
+.header-left{display:flex;align-items:center}
+.header-right{display:flex;align-items:center;justify-content:flex-end;gap:2px}
+.icon-btn{position:relative;width:44px;height:44px;padding:0;border:0;background:transparent;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.icon-btn:hover{color:var(--wine)}
+.menu-btn{display:none}
+.search-btn{height:44px;padding:0 10px 0 0;border:0;background:transparent;color:var(--ink);display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.search-btn:hover{color:var(--wine)}
+.logo{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--ink);text-decoration:none}
+.logo:hover{color:var(--ink)}
+.logo-mark{width:30px;height:30px;fill:none;stroke:var(--gold-line);stroke-width:1.1;stroke-linejoin:round}
+.logo-word{font-family:var(--serif);font-size:34px;font-weight:500;letter-spacing:.14em;line-height:1;padding-left:.14em}
+.logo-sub{font-size:11px;letter-spacing:.56em;line-height:1;color:var(--gold-text);padding-left:.56em}
+.bag-count{position:absolute;top:5px;right:2px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--wine);color:var(--ivory);font-size:10.5px;font-weight:600;line-height:18px;letter-spacing:0;text-align:center}
+.main-nav{border-block:1px solid var(--hair)}
+.main-nav ul{max-width:var(--wrap);margin:0 auto;padding:4px var(--gutter);display:flex;flex-wrap:wrap;justify-content:center;gap:0 36px}
+.main-nav a{display:inline-flex;align-items:center;min-height:44px;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.main-nav a.is-feature{color:var(--wine);font-weight:600}
+
+/* Hero */
+.hero{position:relative;overflow:hidden}
+.hero-bract{position:absolute;fill:none;stroke:var(--gold-line);stroke-width:1.3;stroke-linejoin:round;stroke-linecap:round;pointer-events:none}
+.hero-bract.b1{top:40px;left:-60px;width:260px;height:260px;transform:rotate(-18deg);opacity:.8;animation:sway-a 6s ease-in-out infinite}
+.hero-bract.b2{top:120px;right:-50px;width:200px;height:200px;transform:rotate(32deg);opacity:.75;animation:sway-b 7.5s ease-in-out -3s infinite}
+.petal{transform-box:view-box;transform-origin:50px 50px;animation:petal-flutter 3.6s ease-in-out infinite}
+.petal-2{animation-delay:-1.2s}
+.petal-3{animation-delay:-2.4s}
+@keyframes sway-a{0%,100%{transform:translate(0,0) rotate(-28deg)}50%{transform:translate(12px,-18px) rotate(-8deg)}}
+@keyframes sway-b{0%,100%{transform:translate(0,0) rotate(22deg)}50%{transform:translate(-12px,-16px) rotate(42deg)}}
+@keyframes petal-flutter{0%,100%{transform:rotate(0deg) scale(1)}50%{transform:rotate(8deg) scale(.88)}}
+.hero-inner{position:relative;display:flex;flex-direction:column;align-items:center;gap:52px;padding-block:68px 96px;text-align:center}
+.hero-copy{display:flex;flex-direction:column;align-items:center;gap:22px;max-width:760px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(48px,6.6vw,98px);line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+.hero h1 em{font-style:italic;color:var(--wine)}
+.lede{max-width:36em;font-size:18px;line-height:1.7;color:var(--muted);text-wrap:pretty}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px 32px;padding-top:6px}
+.windows{width:100%;display:flex;justify-content:center;align-items:flex-end;gap:36px}
+.window{flex:0 1 260px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:18px;color:var(--ink);text-decoration:none}
+.window .arch-frame{padding:9px}
+.window.is-center{flex-basis:340px}
+.window.is-center .arch-frame{padding:10px}
+.window .ph{aspect-ratio:13/19}
+.window:hover{color:var(--ink)}
+.window:hover .caption-name{color:var(--wine)}
+.caption{display:flex;flex-direction:column;align-items:center;gap:4px}
+.caption-name{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase}
+.caption-price{font-family:var(--serif);font-style:italic;font-size:19px}
+
+/* Proof row */
+.proof{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px 48px;padding-block:30px;border-block:1px solid var(--hair);text-align:center}
+.stat{display:flex;flex-direction:column;gap:4px}
+.stat-num{font-family:var(--serif);font-size:28px;line-height:1.1}
+.stat-label{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.dia{width:8px;height:8px;color:var(--gold-line)}
+
+/* Collections */
+.collections{display:flex;flex-direction:column;align-items:center;gap:52px}
+.cat-grid{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 28px}
+.cat{display:flex;flex-direction:column;align-items:center;gap:18px;min-width:0;color:var(--ink);text-decoration:none;text-align:center}
+.cat:hover{color:var(--ink)}
+.cat:hover .cat-name{color:var(--wine)}
+.cat .ph{aspect-ratio:3/4}
+.cat-text{display:flex;flex-direction:column;align-items:center;gap:4px}
+.cat-name{font-family:var(--serif);font-style:italic;font-size:24px;line-height:1.2}
+.cat-meta{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* Signature */
+.signature{position:relative;overflow:hidden;background:var(--wine);color:var(--ivory)}
+.signature-inner{display:flex;flex-wrap:wrap;align-items:center;gap:56px 80px;padding-block:100px}
+.sig-copy{flex:1 1 440px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.sig-copy .script{font-family:var(--script);font-size:clamp(56px,6vw,84px);line-height:1.1;color:var(--gold-script)}
+.sig-copy h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.6vw,50px);line-height:1.1}
+.sig-copy p{max-width:30em;font-size:18px;line-height:1.75;color:var(--night-text);text-wrap:pretty}
+.sig-copy .btn{margin-top:10px}
+.orn-wide{width:120px;height:8px;color:var(--gold-light)}
+.sig-art{flex:1 1 380px;min-width:0;position:relative;display:flex;justify-content:center}
+.sig-art .arch-frame{width:min(100%,380px);padding:11px;border-color:var(--gold-light)}
+.sig-art .ph{aspect-ratio:3/4}
+.sig-bract,.sig-corner{position:absolute;fill:none;stroke:var(--gold-light);stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round;pointer-events:none}
+.sig-bract{top:-30px;left:0;width:170px;height:170px;transform:rotate(-20deg);opacity:.7}
+.sig-corner{display:none;top:-40px;right:-50px;width:180px;height:180px;transform:rotate(24deg);opacity:.6}
+
+/* Shop */
+.shop{background:var(--paper)}
+.shop-inner{display:flex;flex-direction:column;align-items:center;gap:48px}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 36px;margin-top:8px}
+.tab{min-height:46px;padding:0 2px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted);font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
+.tab:hover{color:var(--ink)}
+.tab[aria-pressed="true"]{color:var(--wine);border-bottom-color:var(--wine);font-weight:600}
+.product-grid{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px 28px}
+.card{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0;text-align:center}
+.card-media{position:relative;width:100%}
+.card-img{display:block}
+.card .ph{aspect-ratio:3/4}
+.card .ph .sil{transition:transform .5s ease}
+.card:hover .ph .sil{transform:scale(1.05)}
+.tag{position:absolute;left:18px;top:18px;z-index:2;padding:6px 10px;background:var(--ivory);color:var(--ink);font-size:10.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
+.wish{position:absolute;right:10px;top:10px;z-index:2;width:44px;height:44px;padding:0;border:0;background:transparent;color:#fff;display:flex;align-items:center;justify-content:center}
+.wish .icon{filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+.wish[aria-pressed="true"] .icon{fill:currentColor}
+.card-media.light .wish{color:var(--ink)}
+.card-media.light .wish .icon{filter:none}
+.card-name{min-height:calc(2.9em + 6px);padding-top:6px;font-size:15px;line-height:1.45;color:var(--ink);text-decoration:none}
+.card-name:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.card-price{font-family:var(--serif);font-size:20px}
+.add-link{display:inline-flex;align-items:center;min-height:44px;margin-top:-8px;padding:0 4px;border:0;background:transparent;color:var(--ink);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;text-decoration:underline;text-underline-offset:6px}
+.add-link:hover{color:var(--wine)}
+
+/* Home linens */
+.home-inner{display:flex;flex-wrap:wrap;align-items:center;gap:48px 72px}
+.home-copy{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.home-grid{flex:2 1 600px;min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px}
+.home-card{display:flex;flex-direction:column;gap:14px;min-width:0;color:var(--ink);text-decoration:none;text-align:center}
+.home-card:hover{color:var(--ink)}
+.home-card:hover .home-name{text-decoration:underline;text-underline-offset:4px}
+.home-card .ph{aspect-ratio:4/5}
+.home-name{font-size:15px;line-height:1.45}
+.home-price{font-family:var(--serif);font-size:19px}
+
+/* WhatsApp */
+.wa{background:var(--sand)}
+.wa-inner{max-width:860px;display:flex;flex-direction:column;align-items:center;gap:18px;padding-block:72px;text-align:center}
+.wa-inner > .icon{width:30px;height:30px;color:var(--gold-text)}
+.wa-inner h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1.15}
+.wa-inner h2 em{font-style:italic}
+.wa-inner p{max-width:34em;font-size:17px;line-height:1.7;color:var(--muted)}
+.wa-inner .btn{margin-top:8px}
+
+/* Footer */
+.site-footer{background:var(--night);color:var(--night-text)}
+.footer-inner{display:flex;flex-direction:column;gap:56px;padding-block:80px 36px}
+.footer-brand{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.footer-brand .logo-sub{color:var(--gold-light)}
+.footer-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;padding-top:48px;border-top:1px solid var(--night-line)}
+.footer-col{display:flex;flex-direction:column;gap:12px;min-width:0;font-size:15px;line-height:1.5}
+.col-title{padding-bottom:6px;font-size:11.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light)}
+.footer-col a{color:var(--night-text);text-decoration:none}
+.footer-col a:hover{color:var(--gold-light)}
+.footer-col .muted{color:var(--night-muted)}
+.footer-social{display:flex;gap:20px;padding-top:4px}
+.footer-social a{text-decoration:underline;text-underline-offset:5px}
+.nl-input{min-height:48px;padding:0 2px;border:0;border-bottom:1px solid #8C6F76;border-radius:0;background:transparent;color:var(--night-text);font-size:16px}
+.nl-input::placeholder{color:#B49FA5}
+.nl-btn{align-self:flex-start;margin-top:6px;min-height:48px;padding:0 28px;font-size:12px}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-top:28px;border-top:1px solid var(--night-line);font-size:12px;letter-spacing:.08em;color:var(--night-muted)}
+
+/* Product page */
+.crumbs ol{display:flex;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.crumbs li + li::before{content:"·";margin-right:10px}
+.crumbs a{color:var(--muted);text-underline-offset:4px}
+.crumbs [aria-current]{color:var(--ink)}
+.pdp{display:flex;flex-wrap:wrap;align-items:flex-start;gap:56px 80px;padding-block:32px 100px}
+.gallery{flex:1 1 520px;min-width:0;display:flex;gap:20px}
+.thumbs{flex:none;width:74px;display:flex;flex-direction:column;gap:14px}
+.thumb{width:74px;padding:4px;border:1px solid transparent;border-radius:999px 999px 0 0;background:transparent;opacity:.75}
+.thumb:hover{opacity:1}
+.thumb[aria-pressed="true"]{border-color:var(--gold-text);opacity:1}
+.thumb span{display:block;height:92px;border-radius:999px 999px 0 0;background-color:var(--tone);background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 1px,transparent 1px 8px)}
+.gallery-main{flex:1 1 auto;min-width:0;padding:12px}
+.gallery-main .ph{aspect-ratio:4/5}
+.gallery-main .sil{width:42%}
+.gallery-main .sil-wide{width:56%}
+.shot-label{position:absolute;left:50%;bottom:26px;z-index:2;transform:translateX(-50%);padding:7px 14px;background:var(--ivory);color:var(--ink);font-size:10.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.pdp-info{flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:26px;padding-top:12px}
+.pdp-head{display:flex;flex-direction:column;gap:14px}
+.pdp-title{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.2vw,58px);line-height:1.04;text-wrap:balance}
+.pdp-price{font-family:var(--serif);font-size:28px}
+.pdp-rating{font-size:14px;color:var(--muted)}
+.size-block{display:flex;flex-direction:column;gap:14px;padding-top:24px;border-top:1px solid var(--hair)}
+.size-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.label-caps{font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase}
+.muted-inline{color:var(--muted)}
+.size-opts{display:flex;flex-wrap:wrap;gap:10px}
+.size{min-width:58px;min-height:50px;padding:0 14px;border:1px solid var(--hair-strong);border-radius:0;background:transparent;font-size:14px;font-weight:500;letter-spacing:.08em}
+.size:hover{border-color:var(--ink)}
+.size[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--ivory)}
+.size-guide{padding:14px 16px;border:1px solid var(--hair);background:var(--paper);font-size:14px;color:var(--muted)}
+.pdp-note{padding-top:20px;border-top:1px solid var(--hair);font-size:15px;color:var(--muted)}
+.buy-row{display:flex;flex-wrap:wrap;gap:12px}
+.qty{display:flex;align-items:center;border:1px solid var(--hair-strong)}
+.qty button{width:48px;height:54px;padding:0;border:0;background:transparent;font-size:20px}
+.qty output{min-width:28px;text-align:center}
+.btn-add{flex:1 1 220px;min-height:56px;padding:0 28px}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-block:22px;border-block:1px solid var(--hair);text-align:center}
+.service{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11px;letter-spacing:.16em;line-height:1.5;text-transform:uppercase}
+.service .icon{width:22px;height:22px;color:var(--gold-text)}
+.detail{display:flex;flex-direction:column;gap:8px;padding-block:18px;border-top:1px solid var(--hair)}
+.detail:first-child{padding-top:0;border-top:0}
+.detail h2{font-family:var(--serif);font-weight:400;font-style:italic;font-size:21px}
+.detail p{font-size:15px;line-height:1.7;color:var(--muted)}
+.related{background:var(--paper);border-top:1px solid var(--hair)}
+.related-inner{display:flex;flex-direction:column;align-items:center;gap:44px;padding-block:88px}
+.buybar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;justify-content:space-between;gap:16px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--ivory);border-top:1px solid var(--hair);box-shadow:0 -8px 24px rgba(43,26,30,.08)}
+.buybar-price{font-family:var(--serif);font-size:22px}
+.buybar .btn{flex:1;min-height:50px;padding:0 20px}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:24px;z-index:80;max-width:calc(100vw - 32px);padding:14px 22px;background:var(--ink);color:var(--ivory);font-size:14px;letter-spacing:.02em;box-shadow:0 12px 32px rgba(43,26,30,.25);opacity:0;transform:translate(-50%,16px);pointer-events:none;transition:opacity .25s ease,transform .25s ease}
+.toast.is-on{opacity:1;transform:translate(-50%,0)}
+
+/* Search */
+.search{width:100%;max-width:none;max-height:80vh;margin:0;padding:0;inset:0 0 auto 0;border:0;background:var(--ivory);color:var(--ink);box-shadow:0 20px 40px rgba(43,26,30,.18)}
+.search::backdrop{background:rgba(38,17,23,.45)}
+.search-bar{display:flex;align-items:center;gap:12px;padding-block:14px;border-bottom:1px solid var(--hair)}
+.search-bar:focus-within{border-bottom-color:var(--wine)}
+.search-bar input{flex:1;min-width:0;min-height:52px;border:0;background:transparent;font-family:var(--serif);font-size:22px;color:var(--ink)}
+.search-bar input:focus{outline:none}
+.search-bar input::placeholder{color:#8C7773}
+.search-results{padding-block:6px 22px}
+.search-results a{display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:16px;padding:10px 0;border-bottom:1px solid var(--hair);color:var(--ink);text-decoration:none}
+.search-results a:hover .sr-name{text-decoration:underline;text-underline-offset:4px}
+.swatch{width:40px;height:52px;background:var(--tone)}
+.sr-name{font-size:15px;line-height:1.4}
+.sr-price{font-family:var(--serif);font-size:18px}
+.search-hint{padding:16px 0;color:var(--muted);font-size:15px}
+
+/* Responsive */
+@media (max-width:1000px){
+  .product-grid{gap:40px 18px}
+  .card-name{font-size:14px}
+}
+@media (max-width:760px){
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .site-header{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--hair)}
+  .header-main{grid-template-columns:88px minmax(0,1fr) 88px;gap:0;padding:10px 6px 12px}
+  .menu-btn{display:inline-flex}
+  .search-btn{width:44px;padding:0;justify-content:center}
+  .search-btn span{display:none}
+  .logo{gap:4px}
+  .logo-mark{display:none}
+  .header-main .logo-word{font-size:21px;letter-spacing:.12em;padding-left:.12em}
+  .header-main .logo-sub{font-size:9px;letter-spacing:.5em;padding-left:.5em}
+  .account-btn{display:none}
+  .main-nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--ivory);border-top:0;border-bottom:1px solid var(--hair);box-shadow:0 18px 30px rgba(43,26,30,.1)}
+  .main-nav.is-open{display:block}
+  .main-nav ul{flex-direction:column;align-items:stretch;gap:0;padding:4px 20px 12px}
+  .main-nav li + li{border-top:1px solid var(--hair)}
+  .main-nav a{width:100%;min-height:50px;font-size:13px}
+  section[id]{scroll-margin-top:72px}
+  .hero-bract.b1{top:24px;left:-70px;width:200px;height:200px}
+  .hero-bract.b2{top:28px;right:-70px;width:160px;height:160px}
+  .cat-grid{gap:32px 18px}
+  .cat-name{font-size:21px}
+  .proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 12px}
+  .proof .dia{display:none}
+  .footer-cols{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+  .topbar{font-size:11px}
+  .topbar-inner span + span{display:none}
+  .section{padding-block:56px}
+  .h2{font-size:34px}
+  .hero-inner{gap:30px;padding-block:40px 52px}
+  .hero-bract.b1{top:16px;left:-56px;width:170px;height:170px}
+  .hero-bract.b2{display:none}
+  .lede{font-size:16px}
+  .cta-row{width:100%;gap:8px}
+  .cta-row .btn{width:100%}
+  .window:not(.is-center){display:none}
+  .window.is-center{flex:0 1 286px}
+  .proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px;padding-block:26px}
+  .proof .dia{display:none}
+  .stat-num{font-size:24px}
+  .stat-label{font-size:10.5px}
+  .collections{gap:26px}
+  .cat-grid{display:flex;gap:16px;overflow-x:auto;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);scroll-padding-inline:var(--gutter);scroll-snap-type:x mandatory;scrollbar-width:none}
+  .cat-grid::-webkit-scrollbar{display:none}
+  .cat{flex:none;width:140px;gap:12px;scroll-snap-align:start}
+  .cat .arch-frame{padding:6px}
+  .cat .ph{aspect-ratio:auto;height:176px}
+  .cat-name{font-size:19px}
+  .cat-meta{font-size:10.5px}
+  .signature-inner{padding-block:60px 64px}
+  .sig-copy{align-items:center;text-align:center}
+  .sig-copy .btn{width:100%}
+  .sig-art{display:none}
+  .sig-corner{display:block}
+  .sig-copy .script{font-size:62px}
+  .sig-copy h2{font-size:30px}
+  .sig-copy p{font-size:16px}
+  .shop-inner{gap:28px}
+  .tabs{gap:4px 22px}
+  .tab{font-size:11.5px;letter-spacing:.18em}
+  .product-grid{gap:32px 14px}
+  .card{gap:10px}
+  .card-name{font-size:13.5px}
+  .card-price{font-size:18px}
+  .tag{left:14px;top:14px;padding:5px 8px;font-size:9.5px}
+  .wish{right:4px;top:4px}
+  .add-link{display:none}
+  .shop-inner > .btn{width:100%}
+  .home-inner{gap:28px}
+  .home-grid{display:flex;gap:14px;overflow-x:auto;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter);scroll-padding-inline:var(--gutter);scroll-snap-type:x mandatory;scrollbar-width:none}
+  .home-grid::-webkit-scrollbar{display:none}
+  .home-card{flex:none;width:200px;scroll-snap-align:start}
+  .wa-inner{padding-block:48px}
+  .wa-inner .btn{width:100%}
+  .footer-inner{gap:30px;padding-block:48px 32px}
+  .footer-brand .logo-word{font-size:24px}
+  .footer-cols{grid-template-columns:1fr;gap:28px;padding-top:28px}
+  .footer-bottom{flex-direction:column;align-items:center;text-align:center}
+  .crumbs li:last-child{display:none}
+  .pdp{gap:28px;padding-block:12px 56px}
+  .gallery{flex-direction:column-reverse;gap:12px}
+  .thumbs{width:auto;flex-direction:row;gap:10px}
+  .thumb{width:64px}
+  .thumb span{height:80px}
+  .gallery-main{padding:8px}
+  .services{gap:8px}
+  .service{font-size:10px;letter-spacing:.1em}
+  .related-inner{gap:28px;padding-block:56px}
+  body.is-product{padding-bottom:76px}
+  body.is-product .buybar{display:flex}
+  body.is-product .toast{bottom:92px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="s-bract" viewBox="0 0 100 100">
+    <path vector-effect="non-scaling-stroke" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/>
+    <path vector-effect="non-scaling-stroke" transform="rotate(120 50 50)" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/>
+    <path vector-effect="non-scaling-stroke" transform="rotate(240 50 50)" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/>
+  </symbol>
+  <symbol id="s-bract-veined" viewBox="0 0 100 100">
+    <path vector-effect="non-scaling-stroke" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/>
+    <path vector-effect="non-scaling-stroke" transform="rotate(120 50 50)" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/>
+    <path vector-effect="non-scaling-stroke" transform="rotate(240 50 50)" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/>
+    <path vector-effect="non-scaling-stroke" d="M50 46L50 12M50 34L43 25M50 34L57 25M50 24L45 17M50 24L55 17"/>
+    <path vector-effect="non-scaling-stroke" transform="rotate(120 50 50)" d="M50 46L50 12M50 34L43 25M50 34L57 25"/>
+    <path vector-effect="non-scaling-stroke" transform="rotate(240 50 50)" d="M50 46L50 12M50 34L43 25M50 34L57 25"/>
+  </symbol>
+  <symbol id="s-kurta" viewBox="0 0 100 140">
+    <path vector-effect="non-scaling-stroke" d="M38 10C42 16 58 16 62 10L78 16L92 46L82 50L72 32L76 128L24 128L28 32L18 50L8 46L22 16Z"/>
+    <path vector-effect="non-scaling-stroke" d="M50 15L50 34"/>
+  </symbol>
+  <symbol id="s-salwar" viewBox="0 0 100 140">
+    <path vector-effect="non-scaling-stroke" d="M38 10C42 16 58 16 62 10L78 16L92 46L82 50L72 32L76 128L24 128L28 32L18 50L8 46L22 16Z"/>
+    <path vector-effect="non-scaling-stroke" d="M22 20C40 64 60 64 78 20"/>
+  </symbol>
+  <symbol id="s-anarkali" viewBox="0 0 100 140">
+    <path vector-effect="non-scaling-stroke" d="M40 10C44 15 56 15 60 10L72 16L84 44L76 47L66 30L64 52L90 128L10 128L36 52L34 30L24 47L16 44L28 16Z"/>
+    <path vector-effect="non-scaling-stroke" d="M50 14L50 32"/>
+    <path vector-effect="non-scaling-stroke" d="M20 110C40 116 60 116 80 110"/>
+  </symbol>
+  <symbol id="s-coord" viewBox="0 0 100 140">
+    <path vector-effect="non-scaling-stroke" d="M36 10C40 15 60 15 64 10L78 16L88 40L80 43L70 28L70 62L30 62L30 28L20 43L12 40L22 16Z"/>
+    <path vector-effect="non-scaling-stroke" d="M32 68L68 68L72 130L56 130L50 86L44 130L28 130Z"/>
+  </symbol>
+  <symbol id="s-fold" viewBox="0 0 100 100">
+    <rect vector-effect="non-scaling-stroke" x="18" y="60" width="64" height="14" rx="2"/>
+    <rect vector-effect="non-scaling-stroke" x="22" y="46" width="56" height="14" rx="2"/>
+    <rect vector-effect="non-scaling-stroke" x="26" y="32" width="48" height="14" rx="2"/>
+  </symbol>
+  <symbol id="s-stack" viewBox="0 0 100 100">
+    <rect vector-effect="non-scaling-stroke" x="16" y="58" width="68" height="16" rx="2"/>
+    <rect vector-effect="non-scaling-stroke" x="16" y="42" width="68" height="16" rx="2"/>
+    <rect vector-effect="non-scaling-stroke" x="16" y="26" width="68" height="16" rx="2"/>
+  </symbol>
+  <symbol id="s-dohar" viewBox="0 0 100 100">
+    <rect vector-effect="non-scaling-stroke" x="20" y="30" width="60" height="44" rx="4"/>
+    <path vector-effect="non-scaling-stroke" d="M20 44C40 52 60 52 80 44"/>
+  </symbol>
+  <symbol id="s-roll" viewBox="0 0 100 100">
+    <rect vector-effect="non-scaling-stroke" x="22" y="56" width="56" height="18" rx="9"/>
+    <rect vector-effect="non-scaling-stroke" x="26" y="38" width="48" height="18" rx="9"/>
+    <rect vector-effect="non-scaling-stroke" x="30" y="20" width="40" height="18" rx="9"/>
+  </symbol>
+  <symbol id="o-left" viewBox="0 0 60 8">
+    <path d="M0 4H50" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    <path d="M56 0L60 4L56 8L52 4Z" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="o-right" viewBox="0 0 60 8">
+    <path d="M4 0L8 4L4 8L0 4Z" fill="currentColor" stroke="none"/>
+    <path d="M10 4H60" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/>
+  </symbol>
+  <symbol id="o-center" viewBox="0 0 120 8">
+    <path d="M0 4H54M66 4H120" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    <path d="M60 0L64 4L60 8L56 4Z" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="o-dia" viewBox="0 0 8 8"><path d="M4 0L8 4L4 8L0 4Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  <symbol id="i-exchange" viewBox="0 0 24 24"><path d="M4 9a8 8 0 0 1 14-3l2 2M20 15a8 8 0 0 1-14 3l-2-2M20 4v4h-4M4 20v-4h4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></symbol>
+</svg>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span>The Diwali Edit is here</span>
+    <span>Worldwide dispatch</span>
+    <span>WhatsApp · +91 93423 33694</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-main">
+    <div class="header-left">
+      <button type="button" class="icon-btn menu-btn" data-action="menu" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      <button type="button" class="search-btn" data-action="search" aria-label="Search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span aria-hidden="true">Search</span></button>
+    </div>
+    <a class="logo" href="#" aria-label="Bougainvilea Boutique, home">
+      <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-bract"/></svg>
+      <span class="logo-word" aria-hidden="true">BOUGAINVILEA</span>
+      <span class="logo-sub" aria-hidden="true">BOUTIQUE</span>
+    </a>
+    <div class="header-right">
+      <button type="button" class="icon-btn account-btn" data-action="account" aria-label="Account"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></button>
+      <button type="button" class="icon-btn" data-action="wishlist" aria-label="Wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></button>
+      <button type="button" class="icon-btn" id="bag-btn" data-action="bag" aria-label="Bag, empty"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span class="bag-count" id="bag-count" hidden>0</span></button>
+    </div>
+  </div>
+  <nav class="main-nav" id="site-nav" aria-label="Main">
+    <ul>
+      <li><a class="is-feature" href="#shop" data-tab-link="diwali">Diwali Edit</a></li>
+      <li><a href="#collections">Kurta Sets</a></li>
+      <li><a href="#collections">Salwar Sets</a></li>
+      <li><a href="#collections">Unstitched</a></li>
+      <li><a href="#collections">Co-ords &amp; Lounge</a></li>
+      <li><a href="#shop" data-tab-link="diwali">Occasional</a></li>
+      <li><a href="#home-linens">Home</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+<div id="view-home">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <svg class="hero-bract b1" viewBox="0 0 100 100" aria-hidden="true"><g class="petal"><path vector-effect="non-scaling-stroke" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/><path vector-effect="non-scaling-stroke" d="M50 46L50 12M50 34L43 25M50 34L57 25M50 24L45 17M50 24L55 17"/></g><g class="petal petal-2"><path vector-effect="non-scaling-stroke" transform="rotate(120 50 50)" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/><path vector-effect="non-scaling-stroke" transform="rotate(120 50 50)" d="M50 46L50 12M50 34L43 25M50 34L57 25"/></g><g class="petal petal-3"><path vector-effect="non-scaling-stroke" transform="rotate(240 50 50)" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/><path vector-effect="non-scaling-stroke" transform="rotate(240 50 50)" d="M50 46L50 12M50 34L43 25M50 34L57 25"/></g></svg>
+    <svg class="hero-bract b2" viewBox="0 0 100 100" aria-hidden="true"><g class="petal"><path vector-effect="non-scaling-stroke" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/><path vector-effect="non-scaling-stroke" d="M50 46L50 12M50 34L43 25M50 34L57 25"/></g><g class="petal petal-2"><path vector-effect="non-scaling-stroke" transform="rotate(120 50 50)" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/></g><g class="petal petal-3"><path vector-effect="non-scaling-stroke" transform="rotate(240 50 50)" d="M50 50C36 44 30 28 38 16C42 10 47 7 50 4C53 7 58 10 62 16C70 28 64 44 50 50Z"/></g></svg>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><svg class="orn" viewBox="0 0 60 8" aria-hidden="true"><use href="#o-left"/></svg><span>The Diwali Edit</span><svg class="orn" viewBox="0 0 60 8" aria-hidden="true"><use href="#o-right"/></svg></p>
+        <h1 id="hero-title">Grace, in <em>full bloom</em></h1>
+        <p class="lede">Kurta sets, salwar sets and unstitched silks for festive days and every day — chosen with care, and dispatched across India and the world.</p>
+        <div class="cta-row">
+          <a class="btn btn-wine" href="#shop" data-tab-link="diwali">Shop the edit</a>
+          <a class="link-caps" href="https://wa.me/919342333694" target="_blank" rel="noopener">Order on WhatsApp</a>
+        </div>
+      </div>
+      <div class="windows">
+        <a class="window" href="#p/sky-blue-silk-material">
+          <div class="arch-frame"><div class="ph arch" style="--tone:#7FA3B9"><svg class="sil" viewBox="0 0 100 140" aria-hidden="true"><use href="#s-salwar"/></svg></div></div>
+          <span class="caption"><span class="caption-name">Sky Blue Silk Salwar Material</span><span class="caption-price">₹1,110</span></span>
+        </a>
+        <a class="window is-center" href="#p/adah-kurthi-set">
+          <div class="arch-frame"><div class="ph arch" style="--tone:#6E1A3C"><svg class="sil" viewBox="0 0 100 140" aria-hidden="true"><use href="#s-anarkali"/></svg></div></div>
+          <span class="caption"><span class="caption-name">Adah Kurthi Set</span><span class="caption-price">₹1,690</span></span>
+        </a>
+        <a class="window" href="#p/camel-print-silk-material">
+          <div class="arch-frame"><div class="ph arch" style="--tone:#A87C4F"><svg class="sil sil-wide" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-fold"/></svg></div></div>
+          <span class="caption"><span class="caption-name">Camel Print Silk Salwar Material</span><span class="caption-price">₹1,480</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" aria-label="Why customers choose Bougainvilea">
+    <div class="wrap">
+      <div class="proof">
+        <div class="stat"><span class="stat-num">3 Lakh+</span><span class="stat-label">Customers</span></div>
+        <svg class="dia" viewBox="0 0 8 8" aria-hidden="true"><use href="#o-dia"/></svg>
+        <div class="stat"><span class="stat-num">1 Lakh+</span><span class="stat-label">Happy deliveries</span></div>
+        <svg class="dia" viewBox="0 0 8 8" aria-hidden="true"><use href="#o-dia"/></svg>
+        <div class="stat"><span class="stat-num">4.58 / 5</span><span class="stat-label">From 250+ reviews</span></div>
+        <svg class="dia" viewBox="0 0 8 8" aria-hidden="true"><use href="#o-dia"/></svg>
+        <div class="stat"><span class="stat-num">Worldwide</span><span class="stat-label">Quick dispatch</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="collections" aria-labelledby="col-title">
+    <div class="wrap collections">
+      <div class="section-head">
+        <p class="eyebrow"><svg class="orn short" viewBox="0 0 60 8" aria-hidden="true"><use href="#o-left"/></svg><span>Collections</span><svg class="orn short" viewBox="0 0 60 8" aria-hidden="true"><use href="#o-right"/></svg></p>
+        <h2 class="h2" id="col-title">Find your <em>silhouette</em></h2>
+      </div>
+      <div class="cat-grid">
+        <a class="cat" href="#shop" data-tab-link="best">
+          <div class="arch-frame"><div class="ph arch" style="--tone:#A33A63"><svg class="sil" viewBox="0 0 100 140" aria-hidden="true"><use href="#s-kurta"/></svg></div></div>
+          <span class="cat-text"><span class="cat-name">Kurta Sets</span><span class="cat-meta">From ₹499</span></span>
+        </a>
+        <a class="cat" href="#shop" data-tab-link="under">
+          <div class="arch-frame"><div class="ph arch" style="--tone:#34496E"><svg class="sil" viewBox="0 0 100 140" aria-hidden="true"><use href="#s-salwar"/></svg></div></div>
+          <span class="cat-text"><span class="cat-name">Salwar Sets</span><span class="cat-meta">From ₹530</span></span>
+        </a>
+        <a class="cat" href="#shop" data-tab-link="diwali">
+          <div class="arch-frame"><div class="ph arch" style="--tone:#A87C4F"><svg class="sil sil-wide" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-fold"/></svg></div></div>
+          <span class="cat-text"><span class="cat-name">Unstitched Silks</span><span class="cat-meta">From ₹1,110</span></span>
+        </a>
+        <a class="cat" href="#shop" data-tab-link="best">
+          <div class="arch-frame"><div class="ph arch" style="--tone:#2F2A2C"><svg class="sil" viewBox="0 0 100 140" aria-hidden="true"><use href="#s-coord"/></svg></div></div>
+          <span class="cat-text"><span class="cat-name">Co-ord Sets</span><span class="cat-meta">From ₹950</span></span>
+        </a>
+      </div>
+      <a class="link-caps" href="#shop">View all collections</a>
+    </div>
+  </section>
+
+  <section class="signature on-dark" aria-labelledby="sig-title">
+    <svg class="sig-corner" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-bract"/></svg>
+    <div class="wrap signature-inner">
+      <div class="sig-copy">
+        <p class="script">Be classy</p>
+        <h2 id="sig-title">The Bougainvilea Signature</h2>
+        <svg class="orn-wide" viewBox="0 0 120 8" aria-hidden="true"><use href="#o-center"/></svg>
+        <p>Born from a passion for timeless elegance and modern femininity — a curated collection of graceful silhouettes and delicate craftsmanship.</p>
+        <a class="btn btn-gold" href="#p/adah-kurthi-set">Explore occasional wear</a>
+      </div>
+      <div class="sig-art">
+        <svg class="sig-bract" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-bract-veined"/></svg>
+        <div class="arch-frame"><div class="ph arch" style="--tone:#C49A6C"><svg class="sil" viewBox="0 0 100 140" aria-hidden="true"><use href="#s-anarkali"/></svg></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shop" id="shop" aria-labelledby="shop-title">
+    <div class="wrap shop-inner">
+      <div class="section-head">
+        <h2 class="h2" id="shop-title">Picked for the <em>season</em></h2>
+        <div class="tabs" role="group" aria-label="Choose a selection">
+          <button type="button" class="tab" data-tab="diwali" aria-pressed="true">Diwali Edit</button>
+          <button type="button" class="tab" data-tab="best" aria-pressed="false">Best Sellers</button>
+          <button type="button" class="tab" data-tab="under" aria-pressed="false">Under ₹999</button>
+        </div>
+      </div>
+      <div class="product-grid" id="shop-grid"></div>
+      <a class="btn btn-outline" href="#collections">Browse all 460+ styles</a>
+    </div>
+  </section>
+
+  <section class="section" id="home-linens" aria-labelledby="home-title">
+    <div class="wrap home-inner">
+      <div class="home-copy">
+        <p class="kicker">Home &amp; little ones</p>
+        <h2 class="h2" id="home-title">For the home, <em>too</em></h2>
+        <p class="body-muted">Floral cotton bedspreads, soft waffle bath towels and baby dohars in prints like Dino Dreamland and Little Space Explorer.</p>
+        <a class="link-caps" href="#p/blush-pink-paisley-bedspread">Shop home</a>
+      </div>
+      <div class="home-grid">
+        <a class="home-card" href="#p/blush-pink-paisley-bedspread">
+          <div class="ph light" style="--tone:#E4BFC4"><svg class="sil sil-wide" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-stack"/></svg></div>
+          <span class="home-name">Blush Pink Paisley Floral Cotton Bedspread</span>
+          <span class="home-price">₹730</span>
+        </a>
+        <a class="home-card" href="#p/baby-dohar-dino-dreamland">
+          <div class="ph light" style="--tone:#AFC6B2"><svg class="sil sil-wide" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-dohar"/></svg></div>
+          <span class="home-name">Baby Cotton Dohar – Dino Dreamland</span>
+          <span class="home-price">₹1,020</span>
+        </a>
+        <a class="home-card" href="#p/waffle-bath-towels">
+          <div class="ph light" style="--tone:#DCCFBC"><svg class="sil sil-wide" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-roll"/></svg></div>
+          <span class="home-name">Cotton Waffle Bath Towels</span>
+          <span class="home-price">From ₹340</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wa" id="whatsapp" aria-labelledby="wa-title">
+    <div class="wrap wa-inner">
+      <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+      <h2 id="wa-title">Shop with us on <em>WhatsApp</em></h2>
+      <p>Send a screenshot of anything you love and we’ll help you place your order. Monday to Saturday, 9 AM – 8:30 PM.</p>
+      <a class="btn btn-green" href="https://wa.me/919342333694" target="_blank" rel="noopener">Chat · +91 93423 33694</a>
+    </div>
+  </section>
+
+</div>
+
+<div id="view-product" hidden>
+  <nav class="wrap crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="#">Home</a></li>
+      <li><a href="#collections" id="crumb-collection">Occasional Wear</a></li>
+      <li><span id="crumb-name" aria-current="page">Adah Kurthi Set</span></li>
+    </ol>
+  </nav>
+  <section class="wrap pdp" aria-labelledby="pdp-title">
+    <div class="gallery">
+      <div class="thumbs" id="pdp-thumbs" role="group" aria-label="Product photos"></div>
+      <div class="gallery-main arch-frame"><div class="ph arch" id="pdp-main"></div></div>
+    </div>
+    <div class="pdp-info">
+      <div class="pdp-head">
+        <p class="eyebrow left"><span id="pdp-collection">Occasional Wear</span><svg class="orn short" viewBox="0 0 60 8" aria-hidden="true"><use href="#o-right"/></svg></p>
+        <h1 class="pdp-title" id="pdp-title" tabindex="-1">Adah Kurthi Set</h1>
+        <p class="pdp-price" id="pdp-price">₹1,690</p>
+        <p class="pdp-rating">Rated 4.58 / 5 by our customers · 250+ reviews</p>
+      </div>
+      <div class="size-block" id="pdp-size-wrap">
+        <div class="size-head">
+          <span class="label-caps" id="size-heading">Size · <span class="muted-inline" id="pdp-size-label">M</span></span>
+          <button type="button" class="link-btn" data-action="size-guide" aria-expanded="false" aria-controls="size-guide">Size guide</button>
+        </div>
+        <div class="size-opts" id="pdp-sizes" role="group" aria-labelledby="size-heading">
+          <button type="button" class="size" data-size="S" aria-pressed="false">S</button>
+          <button type="button" class="size" data-size="M" aria-pressed="true">M</button>
+          <button type="button" class="size" data-size="L" aria-pressed="false">L</button>
+          <button type="button" class="size" data-size="XL" aria-pressed="false">XL</button>
+          <button type="button" class="size" data-size="XXL" aria-pressed="false">XXL</button>
+        </div>
+        <div class="size-guide" id="size-guide" hidden>[Your size chart — bust, waist, hip and length for S to XXL]</div>
+      </div>
+      <p class="pdp-note" id="pdp-note" hidden>Unstitched material set — stitch it to your own measurements.</p>
+      <div class="buy-row">
+        <div class="qty" role="group" aria-label="Quantity">
+          <button type="button" data-action="qty-dec" aria-label="Decrease quantity">−</button>
+          <output id="pdp-qty" aria-live="polite">1</output>
+          <button type="button" data-action="qty-inc" aria-label="Increase quantity">+</button>
+        </div>
+        <button type="button" class="btn btn-wine btn-add" id="pdp-add" data-action="add-pdp">Add to bag · ₹1,690</button>
+      </div>
+      <a class="btn btn-line-green" id="pdp-wa" href="https://wa.me/919342333694" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Ask about this on WhatsApp</a>
+      <ul class="services">
+        <li class="service"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>Worldwide dispatch</li>
+        <li class="service"><svg class="icon" aria-hidden="true"><use href="#i-exchange"/></svg>Exchange policy</li>
+        <li class="service"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Secure checkout</li>
+      </ul>
+      <div class="details">
+        <div class="detail"><h2>Details &amp; fabric</h2><p>[Fabric, what’s in the set, and care instructions — from your product data]</p></div>
+        <div class="detail"><h2>Delivery</h2><p>Shipped across India and worldwide. [Delivery timelines by region]</p></div>
+        <div class="detail"><h2>Need help choosing?</h2><p>Call or WhatsApp <a href="tel:+919342333694">+91 93423 33694</a>, Monday to Saturday, 9 AM – 8:30 PM.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="related" aria-labelledby="related-title">
+    <div class="wrap related-inner">
+      <h2 class="h2" id="related-title">You may also <em>love</em></h2>
+      <div class="product-grid" id="related-grid"></div>
+    </div>
+  </section>
+  <div class="buybar">
+    <span class="buybar-price" id="buybar-price">₹1,690</span>
+    <button type="button" class="btn btn-wine" data-action="add-pdp">Add to bag</button>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer on-dark">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="logo-word">BOUGAINVILEA</span>
+      <span class="logo-sub">BOUTIQUE</span>
+    </div>
+    <div class="footer-cols">
+      <nav class="footer-col" aria-labelledby="f-shop">
+        <h2 class="col-title" id="f-shop">Shop</h2>
+        <a href="#collections">Kurta Sets</a>
+        <a href="#collections">Salwar Sets</a>
+        <a href="#collections">Unstitched Materials</a>
+        <a href="#collections">Co-ords &amp; Loungewear</a>
+        <a href="#collections">Pants</a>
+        <a href="#home-linens">Bedspreads, Towels &amp; Dohars</a>
+      </nav>
+      <nav class="footer-col" aria-labelledby="f-care">
+        <h2 class="col-title" id="f-care">Customer care</h2>
+        <a href="#">Track your order</a>
+        <a href="#">Exchange Policy</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </nav>
+      <div class="footer-col">
+        <h2 class="col-title">The boutique</h2>
+        <a href="tel:+919342333694">+91 93423 33694</a>
+        <a href="mailto:bougainvilea.boutique@gmail.com" style="overflow-wrap:anywhere">bougainvilea.boutique@gmail.com</a>
+        <span class="muted">Mon–Sat · 9 AM – 8:30 PM</span>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/bougainvilea.erode/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/919342333694" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <form class="footer-col" id="newsletter">
+        <label class="col-title" for="nl-email">New arrivals, first</label>
+        <input class="nl-input" id="nl-email" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+        <button type="submit" class="btn btn-gold nl-btn">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bougainvilea Boutique</span>
+      <span>100% secure checkout · Worldwide dispatch</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="search" id="search" aria-label="Search the boutique">
+  <form class="wrap search-bar" id="search-form" role="search">
+    <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+    <label class="visually-hidden" for="q">Search products</label>
+    <input id="q" name="q" type="search" placeholder="Search silks, kurtis, bedspreads…" autocomplete="off">
+    <button type="button" class="icon-btn" data-action="close-search" aria-label="Close search"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  </form>
+  <ul class="wrap search-results" id="search-results"></ul>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  var WHATSAPP = '919342333694';
+
+  // Product data — names and prices from bougainvilea.com. Tone = placeholder colour until photos are added.
+  var CATALOG = {
+    'adah-kurthi-set':               { name: 'Adah Kurthi Set', price: 1690, tone: '#6E1A3C', kind: 'anarkali', collection: 'Occasional Wear', tag: 'Diwali Edit', sized: true },
+    'black-floral-cream-silk-material': { name: 'Black Floral Embroidered Cream Silk Salwar Material Set', price: 1660, tone: '#3A302D', kind: 'salwar', collection: 'Unstitched Materials', tag: 'Silk' },
+    'camel-print-silk-material':     { name: 'Camel Print Multicolour Silk Salwar Material Set', price: 1480, tone: '#A87C4F', kind: 'fold', collection: 'Unstitched Materials', tag: 'Silk' },
+    'sky-blue-silk-material':        { name: 'Bird & Floral Print Sky Blue Silk Salwar Material Set', price: 1110, tone: '#7FA3B9', kind: 'salwar', collection: 'Unstitched Materials' },
+    'raspberry-bloom-long-kurti':    { name: 'Raspberry Bloom Printed Long Kurti', price: 699, tone: '#A33A63', kind: 'kurta', collection: 'Kurtas', tag: 'Best seller', sized: true },
+    'blue-ikat-suit-set':            { name: 'Blue Ikat Handloom Cotton Suit Set', price: 999, tone: '#34496E', kind: 'salwar', collection: 'Salwar Sets', tag: 'Handloom', sized: true },
+    'berry-red-bloom-coord':         { name: 'Berry Red Bloom Printed Co-ord Set', price: 950, tone: '#8E2A36', kind: 'coord', collection: 'Co-ord Sets', sized: true },
+    'amaranth-kurti-set':            { name: 'Amaranth Printed Cotton Blend Kurti Set', price: 799, tone: '#9A3F69', kind: 'kurta', collection: 'Kurta Sets', sized: true },
+    'mustard-art-kurthi-set':        { name: 'Casual Wear Art Mustard Kurthi Set', price: 499, tone: '#B08A3E', kind: 'kurta', collection: 'Kurta Sets', sized: true },
+    'brick-red-salwar-set':          { name: 'Brick Red Abstract Floral Printed Cotton-Blend Salwar Set', price: 530, tone: '#9A4A36', kind: 'salwar', collection: 'Salwar Sets', sized: true },
+    'black-floral-vatican-silk-kurti': { name: 'Black Floral Printed Vatican Silk Kurti Set', price: 630, tone: '#2F2A2C', kind: 'kurta', collection: 'Kurta Sets', sized: true },
+    'burgundy-geometric-salwar-set': { name: 'Burgundy Geometric Grace Salwar Set', price: 799, tone: '#652236', kind: 'salwar', collection: 'Salwar Sets', sized: true },
+    'blush-pink-paisley-bedspread':  { name: 'Blush Pink Paisley Floral Cotton Bedspread', price: 730, tone: '#E4BFC4', kind: 'stack', collection: 'Bedspreads & Dohars', light: true, home: true },
+    'baby-dohar-dino-dreamland':     { name: 'Baby Cotton Dohar – Dino Dreamland', price: 1020, tone: '#AFC6B2', kind: 'dohar', collection: 'Bedspreads & Dohars', light: true, home: true },
+    'waffle-bath-towels':            { name: 'Cotton Waffle Bath Towels', price: 340, from: true, tone: '#DCCFBC', kind: 'roll', collection: 'Towels', light: true, home: true }
+  };
+
+  var TABS = {
+    diwali: ['adah-kurthi-set', 'black-floral-cream-silk-material', 'camel-print-silk-material', 'sky-blue-silk-material'],
+    best:   ['raspberry-bloom-long-kurti', 'blue-ikat-suit-set', 'berry-red-bloom-coord', 'amaranth-kurti-set'],
+    under:  ['mustard-art-kurthi-set', 'brick-red-salwar-set', 'black-floral-vatican-silk-kurti', 'burgundy-geometric-salwar-set']
+  };
+  var RELATED = ['black-floral-cream-silk-material', 'camel-print-silk-material', 'blue-ikat-suit-set', 'raspberry-bloom-long-kurti', 'adah-kurthi-set', 'burgundy-geometric-salwar-set'];
+  var RELATED_HOME = ['blush-pink-paisley-bedspread', 'baby-dohar-dino-dreamland', 'waffle-bath-towels', 'adah-kurthi-set', 'raspberry-bloom-long-kurti'];
+  var SHOTS = {
+    sized:    ['Front view', 'Back view', 'Fabric detail', 'Styled look'],
+    material: ['Full set', 'Fabric detail', 'Print close-up', 'Draped'],
+    home:     ['Full view', 'Print detail', 'Close-up', 'Folded']
+  };
+  var VIEWBOX = { kurta: '0 0 100 140', salwar: '0 0 100 140', anarkali: '0 0 100 140', coord: '0 0 100 140', fold: '0 0 100 100', stack: '0 0 100 100', dohar: '0 0 100 100', roll: '0 0 100 100' };
+
+  var state = { tab: 'diwali', bag: 0, wish: new Set(), pdp: { slug: null, shot: 0, size: 'M', qty: 1 } };
+  var HOME_TITLE = document.title;
+  var current = 'home';
+
+  function $(sel, root) { return (root || document).querySelector(sel); }
+  function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function money(n) { return '₹' + n.toLocaleString('en-IN'); }
+  function priceText(p) { return (p.from ? 'From ' : '') + money(p.price); }
+  function isMaterial(p) { return /Material/.test(p.name); }
+  function shade(hex, amt) {
+    var n = parseInt(hex.slice(1), 16), r = n >> 16, g = (n >> 8) & 255, b = n & 255;
+    var t = amt < 0 ? 0 : 255, a = Math.abs(amt);
+    r = Math.round(r + (t - r) * a); g = Math.round(g + (t - g) * a); b = Math.round(b + (t - b) * a);
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  }
+  function sil(kind) {
+    var wide = VIEWBOX[kind] === '0 0 100 100';
+    return '<svg class="sil' + (wide ? ' sil-wide' : '') + '" viewBox="' + VIEWBOX[kind] + '" aria-hidden="true"><use href="#s-' + kind + '"></use></svg>';
+  }
+
+  function card(slug) {
+    var p = CATALOG[slug];
+    var action = p.sized
+      ? '<a class="add-link" href="#p/' + slug + '">Choose size</a>'
+      : '<button type="button" class="add-link" data-add="' + slug + '">Add to bag</button>';
+    return '<article class="card">' +
+      '<div class="card-media' + (p.light ? ' light' : '') + '">' +
+        '<a class="card-img" href="#p/' + slug + '" tabindex="-1" aria-hidden="true"><div class="ph' + (p.light ? ' light' : '') + '" style="--tone:' + p.tone + '">' + sil(p.kind) + '</div></a>' +
+        (p.tag ? '<span class="tag">' + esc(p.tag) + '</span>' : '') +
+        '<button type="button" class="wish" data-wish="' + slug + '" aria-pressed="' + state.wish.has(slug) + '" aria-label="Save ' + esc(p.name) + ' to wishlist"><svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg></button>' +
+      '</div>' +
+      '<a class="card-name" href="#p/' + slug + '">' + esc(p.name) + '</a>' +
+      '<span class="card-price">' + priceText(p) + '</span>' +
+      action +
+    '</article>';
+  }
+
+  function renderTab() {
+    $('#shop-grid').innerHTML = TABS[state.tab].map(card).join('');
+    $$('.tab').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.tab === state.tab)); });
+  }
+
+  var toastTimer;
+  function toast(msg) {
+    var t = $('#toast');
+    t.textContent = msg;
+    t.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('is-on'); }, 2800);
+  }
+
+  function addToBag(slug, qty, size) {
+    var p = CATALOG[slug];
+    state.bag += qty;
+    var badge = $('#bag-count');
+    badge.textContent = state.bag;
+    badge.hidden = false;
+    $('#bag-btn').setAttribute('aria-label', 'Bag, ' + state.bag + ' item' + (state.bag === 1 ? '' : 's'));
+    toast('Added to your bag — ' + p.name + (size ? ' · ' + size : '') + (qty > 1 ? ' × ' + qty : ''));
+  }
+
+  function toggleWish(slug) {
+    var on = !state.wish.has(slug);
+    if (on) { state.wish.add(slug); } else { state.wish.delete(slug); }
+    $$('[data-wish="' + slug + '"]').forEach(function (b) { b.setAttribute('aria-pressed', String(on)); });
+    toast(on ? 'Saved to your wishlist' : 'Removed from your wishlist');
+  }
+
+  function renderPdp() {
+    var s = state.pdp, p = CATALOG[s.slug];
+    var tones = [p.tone, shade(p.tone, -0.14), shade(p.tone, 0.14), shade(p.tone, -0.28)];
+    var labels = p.sized ? SHOTS.sized : (p.home ? SHOTS.home : SHOTS.material);
+    $('#pdp-thumbs').innerHTML = tones.map(function (t, i) {
+      return '<button type="button" class="thumb" data-shot="' + i + '" aria-pressed="' + (i === s.shot) + '" aria-label="Show ' + labels[i].toLowerCase() + '"><span style="--tone:' + t + '"></span></button>';
+    }).join('');
+    var main = $('#pdp-main');
+    main.style.setProperty('--tone', tones[s.shot]);
+    main.classList.toggle('light', !!p.light);
+    main.innerHTML = sil(p.kind) + '<span class="shot-label">' + labels[s.shot] + '</span>';
+    $('#pdp-size-label').textContent = s.size;
+    $$('#pdp-sizes .size').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.size === s.size)); });
+    $('#pdp-qty').textContent = s.qty;
+    var total = money(p.price * s.qty);
+    $('#pdp-add').textContent = 'Add to bag · ' + total;
+    $('#buybar-price').textContent = total;
+  }
+
+  function showProduct(slug) {
+    var p = CATALOG[slug];
+    if (state.pdp.slug !== slug) { state.pdp = { slug: slug, shot: 0, size: 'M', qty: 1 }; }
+    $('#view-home').hidden = true;
+    $('#view-product').hidden = false;
+    document.body.classList.add('is-product');
+    $('#crumb-collection').textContent = p.collection;
+    $('#crumb-name').textContent = p.name;
+    $('#pdp-collection').textContent = p.collection;
+    $('#pdp-title').textContent = p.name;
+    $('#pdp-price').textContent = priceText(p);
+    $('#pdp-size-wrap').hidden = !p.sized;
+    $('#pdp-note').hidden = !isMaterial(p);
+    $('#size-guide').hidden = true;
+    $('[data-action="size-guide"]').setAttribute('aria-expanded', 'false');
+    $('#pdp-wa').href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Hi Bougainvilea, I would like to order the ' + p.name + ' (' + priceText(p) + ').');
+    var pool = p.home ? RELATED_HOME : RELATED;
+    $('#related-grid').innerHTML = pool.filter(function (x) { return x !== slug; }).slice(0, 4).map(card).join('');
+    document.title = p.name + ' — Bougainvilea Boutique';
+    renderPdp();
+    jumpToTop();
+    $('#pdp-title').focus({ preventScroll: true });
+  }
+
+  // Page changes jump straight to the top; in-page links keep the smooth scroll.
+  function jumpToTop() {
+    try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
+    catch (err) { window.scrollTo(0, 0); }
+  }
+
+  function route() {
+    var m = location.hash.match(/^#p\/([a-z0-9-]+)$/);
+    if (m && CATALOG[m[1]]) { showProduct(m[1]); current = 'product'; return; }
+    var wasProduct = current === 'product';
+    current = 'home';
+    $('#view-product').hidden = true;
+    $('#view-home').hidden = false;
+    document.body.classList.remove('is-product');
+    document.title = HOME_TITLE;
+    var id = location.hash.slice(1);
+    var target = id ? document.getElementById(id) : null;
+    if (target && $('#view-home').contains(target)) { target.scrollIntoView({ block: 'start' }); }
+    else if (wasProduct || !id) { jumpToTop(); }
+  }
+
+  function setMenu(open) {
+    var nav = $('#site-nav'), btn = $('.menu-btn');
+    nav.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    $('use', btn).setAttribute('href', open ? '#i-close' : '#i-menu');
+  }
+
+  var dlg = $('#search');
+  function renderResults(q) {
+    var words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    var list = $('#search-results');
+    if (!words.length) { list.innerHTML = '<li class="search-hint">Try “silk”, “kurti”, “ikat” or “bedspread”.</li>'; return; }
+    var hits = Object.keys(CATALOG).filter(function (slug) {
+      var p = CATALOG[slug], hay = (p.name + ' ' + p.collection).toLowerCase();
+      return words.every(function (w) { return hay.indexOf(w) !== -1; });
+    }).slice(0, 8);
+    list.innerHTML = hits.length
+      ? hits.map(function (slug) {
+          var p = CATALOG[slug];
+          return '<li><a href="#p/' + slug + '"><span class="swatch" style="--tone:' + p.tone + '"></span><span class="sr-name">' + esc(p.name) + '</span><span class="sr-price">' + priceText(p) + '</span></a></li>';
+        }).join('')
+      : '<li class="search-hint">No pieces match “' + esc(q) + '”. Try a colour or a fabric.</li>';
+  }
+  function openSearch() {
+    setMenu(false);
+    $('#q').value = '';
+    renderResults('');
+    if (typeof dlg.showModal === 'function') { dlg.showModal(); } else { dlg.setAttribute('open', ''); }
+    $('#q').focus();
+  }
+  function closeSearch() { if (typeof dlg.close === 'function') { dlg.close(); } else { dlg.removeAttribute('open'); } }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-wish],[data-add],[data-tab],[data-tab-link],[data-shot],[data-size],[data-action]');
+    if (!t) return;
+    var d = t.dataset;
+    if (d.wish) { toggleWish(d.wish); return; }
+    if (d.add) { addToBag(d.add, 1, null); return; }
+    if (d.tab) { state.tab = d.tab; renderTab(); return; }
+    if (d.tabLink) { state.tab = d.tabLink; renderTab(); setMenu(false); return; }
+    if (d.shot) { state.pdp.shot = Number(d.shot); renderPdp(); return; }
+    if (d.size) { state.pdp.size = d.size; renderPdp(); return; }
+    switch (d.action) {
+      case 'menu': setMenu(!$('#site-nav').classList.contains('is-open')); break;
+      case 'search': openSearch(); break;
+      case 'close-search': closeSearch(); break;
+      case 'account': toast('Customer login opens here'); break;
+      case 'wishlist':
+        toast(state.wish.size ? state.wish.size + ' saved piece' + (state.wish.size === 1 ? '' : 's') + ' in your wishlist' : 'Your wishlist is empty — tap a heart to save a piece');
+        break;
+      case 'bag': toast(state.bag ? state.bag + ' item' + (state.bag === 1 ? '' : 's') + ' in your bag' : 'Your bag is empty'); break;
+      case 'qty-dec': state.pdp.qty = Math.max(1, state.pdp.qty - 1); renderPdp(); break;
+      case 'qty-inc': state.pdp.qty = Math.min(10, state.pdp.qty + 1); renderPdp(); break;
+      case 'add-pdp': {
+        var p = CATALOG[state.pdp.slug];
+        addToBag(state.pdp.slug, state.pdp.qty, p.sized ? state.pdp.size : null);
+        break;
+      }
+      case 'size-guide': {
+        var panel = $('#size-guide'), open = panel.hidden;
+        panel.hidden = !open;
+        t.setAttribute('aria-expanded', String(open));
+        break;
+      }
+    }
+  });
+
+  $('#site-nav').addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', function (e) { if (e.matches) setMenu(false); });
+
+  $('#q').addEventListener('input', function (e) { renderResults(e.target.value); });
+  $('#search-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var first = $('#search-results a');
+    if (first) { location.hash = first.getAttribute('href'); closeSearch(); }
+  });
+  $('#search-results').addEventListener('click', function (e) { if (e.target.closest('a')) closeSearch(); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) closeSearch(); });
+
+  $('#newsletter').addEventListener('submit', function (e) {
+    e.preventDefault();
+    e.currentTarget.reset();
+    toast('Thank you — new arrivals will reach your inbox first.');
+  });
+
+  window.addEventListener('hashchange', route);
+  renderTab();
+  route();
+})();
+</script>
+</body>
+</html>
